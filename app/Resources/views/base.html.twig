@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" charset="UTF-8" href="{{ asset("css/bootstrap-3.1.1-dist/css/bootstrap.min.css") }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}"/>
+        <link type="text/css" href="{{ asset('css/menu.css') }}" rel="stylesheet" />
+
+        {% endblock %}
+
+
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}">
+        <link rel="icon" href="{{ asset("img/favicon.png") }}">
+
+    </head>
+    <body>
+    <header>
+        <a href="{{ path("jacquet_troc_accueil") }}"><center><table>
+                <tr>
+                    <td>
+                        <img src="{{ asset('img/handshake.png') }}" height="50" width="50">
+                    </td>
+                    <td>
+                        <h1>&nbsp;&nbsp;Bienvenue sur Troc Panam'&nbsp;&nbsp;</h1>
+                    </td>
+                    <td>
+                        <img src="{{ asset('img/handshake.png') }}" height="50" width="50">
+                    </td>
+                </tr>
+            </table></center></a>
+        <div id="menu">
+            <ul class="menu">
+                <li><a href="#" class="parent"><span>Accueil</span></a>
+                    <div><ul>
+                            {% if app.user  %}
+                            <li><a href="{{ path("fos_user_security_logout") }}" class="parent"><span>Se déconnecter</span></a></li>
+                             {% else %}
+                                <li><a href="{{ path("fos_user_security_login") }}"><span>Se connecter</span></a></li>
+                                <li><a href="{{ path("fos_user_registration_register") }}"><span>S'inscrire</span></a></li>
+                            {% endif %}
+                        </ul></div>
+                </li>
+                <li><a href="#" class="parent"><span>Trocs</span></a>
+                    <div>
+                        <ul class="one">
+                            {% if app.user  %}
+                            <li><a href="#"><span>Mes trocs en cours</span></a></li>
+                            <li><a href="#"><span>Mon historique de trocs</span></a></li>
+                            <li><a href="{{ path('jacquet_troc_proposer_troc') }}"><span>Proposer un troc</span></a></li>
+                            {% endif %}
+                            <li><a href="{{ path("jacquet_troc_all") }}"><span>Voir les trocs</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#"><span>Help</span></a></li>
+                <li class="last"><a href="#"><span>Contacts</span></a></li>
+                <li><a href="#" class="elbutton"><span>Search</span></a></li>
+            </ul>
+        </div>
+
+        <a href="http://apycom.com/"></a>
+        <div class="container-fluid">
+        <div class="row text-center">
+        <a href="{{ path("jacquet_troc_accueil") }}"><img src="{{ asset('img/banane.png') }}" alt="logo" class="img-rounded"/></a>
+        <a href="{{ path("jacquet_troc_all") }}"><button type="button" class="btn btn-warning">Voir les Trocs</button></a>
+        <button type="button" class="btn btn-warning">Catégorie</button>
+            {% if app.user  %}
+                <a href="{{ path("fos_user_security_logout") }}"><button type="button" class="btn btn-danger">Déconnexion</button></a>
+                <a href="{{ path("jacquet_troc_proposer_troc") }}"><button type="button" class="btn btn-warning">Proposer Troc</button></a>
+            {% else %}
+
+                <a href="{{ path("fos_user_security_login") }}"><button type="button" class="btn btn-danger">Connexion</button></a>
+                <a href="{{ path("fos_user_registration_register") }}"><button type="button" class="btn btn-danger">S'incrire</button></a>
+
+            {% endif %}
+        </div>
+        </div>
+    </header>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('jquery/jquery.js') }}"/>
+            <script type="text/javascript" src="{{ asset('jquery/menu.js') }}"/>
+        {% endblock %}
+
+
+    <footer>
+
+    </footer>
+    </body>
+
+</html>

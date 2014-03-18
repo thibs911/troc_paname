@@ -1,0 +1,16 @@
+jacquet_utilisateur_homepage:
+
+    pattern:  /hello/{name}
+    defaults: { _controller: JacquetUtilisateurBundle:Default:index }
+
+
+HelloTheWorld:
+
+    pattern: /hello-world
+    defaults: { _controller: JacquetUtilisateurBundle:Utilisateur:index }
+
+
+ByeByeMotherFucker:
+
+    pattern: /bye-bye
+    defaults: { _controller: JacquetUtilisateurBundle:Utilisateur:bye }

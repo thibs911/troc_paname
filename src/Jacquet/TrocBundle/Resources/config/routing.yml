@@ -1,0 +1,30 @@
+jacquet_troc_accueil:
+    pattern : /
+    defaults: {_controller: JacquetTrocBundle:Troc:index}
+
+
+
+jacquet_troc_voir:
+    pattern: /troc/{id}
+    defaults: {_controller: JacquetTrocBundle:Troc:voir}
+    requirements:
+      id: \d+
+
+jacquet_troc_ajouter:
+    pattern: /ajouter
+    defaults: {_controller: JacquetTrocBundle:Troc:ajouter}
+
+
+jacquet_troc_all:
+    pattern: /trocs/{page}
+    defaults: {_controller: JacquetTrocBundle:Troc:viewAll, page: 0}
+    requirements:
+      page: \d*
+
+jacquet_troc_proposer_troc:
+    pattern: /troc/add
+    defaults: {_controller: JacquetTrocBundle:Troc:addTroc}
+
+
+
+

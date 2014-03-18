@@ -1,0 +1,38 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+
+<div class="container-fluid">
+
+<div class="row">
+    <div class="col-xs-6">
+        <h2>Top Trocs</h2>
+        {% for top in trocs %}
+            <div class="row">
+            {{ top.objettroc.objet.model.modele}}
+                <img src="../img/model/{{top.objettroc.objet.marque.nomMarque | lower}}/{{ top.objettroc.objet.image }}.png"/>
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="col-xs-6">
+        <h2>Les Derniers Trocs</h2>
+        {% for troc in trocs %}
+        <div class="col-xs-3">
+            {{ troc.objettroc.objet.marque.nomMarque | lower}}
+            <img src="../img/model/{{troc.objettroc.objet.marque.nomMarque | lower}}/{{ troc.objettroc.objet.image }}.png">
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+
+</div>
+
+</div>
+
+{% endblock %}
+
+

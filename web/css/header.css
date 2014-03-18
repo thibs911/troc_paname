@@ -1,0 +1,40 @@
+body { background:url(../img/back.jpg);
+       }
+
+body li,ul,ol, label, h3, p{
+    color:white;
+}
+div.well{
+    background: transparent !important;
+    border:0px !important;
+}
+
+div.col-xs-6{
+    color:white;
+}
+
+#menu {
+    top:30px;
+    margin:0 auto;
+    width:80%;
+}
+#copyright {
+    margin:100px auto;
+    width:80%;
+    font:12px 'Trebuchet MS';
+    color:#bbb;
+    text-indent:20px;
+    padding:40px 0 0 0;
+}
+h1 {
+	text-align: center;
+	color: #52B7C4;
+	vertical-align: center;
+}
+
+table {
+	text-align: center;
+}
+
+#copyright a { color:#bbb; }
+#copyright a:hover { color:#fff; }

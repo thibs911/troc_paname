@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+
+<div class="container-fluid">
+
+<div class="row">
+
+
+    {% for troc in trocs %}
+        <div class="col-xs-6">
+        <ul>Troc ajouté le : {{ troc.date|date("d/m/y") }}</ul>
+
+        <ul>{{ troc.objettroc.objet.marque.nomMarque | lower}}</ul>
+        <ul>{{ troc.objettroc.objet.image }}</ul>
+        <a href="{{ path('jacquet_troc_voir',{'id' : troc.id}) }}" ><img src="../img/model/{{troc.objettroc.objet.marque.nomMarque | lower}}/{{ troc.objettroc.objet.image }}.png"></a>
+        </div>
+
+
+
+    {% endfor %}
+
+
+</div>
+
+</div>
+
+{% endblock %}
+
+

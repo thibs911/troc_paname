@@ -1,0 +1,7 @@
+parameters:
+#    jacquet_utilisateur.example.class: Jacquet\UtilisateurBundle\Example
+
+services:
+#    jacquet_utilisateur.example:
+#        class: %jacquet_utilisateur.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

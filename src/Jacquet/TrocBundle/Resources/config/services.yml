@@ -1,0 +1,7 @@
+parameters:
+#    jacquet_troc.example.class: Jacquet\TrocBundle\Example
+
+services:
+#    jacquet_troc.example:
+#        class: %jacquet_troc.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

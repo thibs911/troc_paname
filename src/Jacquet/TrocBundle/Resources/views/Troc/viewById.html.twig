@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+
+<div class="container-fluid">
+
+<div class="row text-center">
+
+
+
+
+
+
+        <ul>{{ monTroc.objettroc.objet.marque.nomMarque | lower}}</ul>
+        <ul>{{ monTroc.objettroc.objet.image }}</ul>
+        <img src="../../img/model/{{monTroc.objettroc.objet.marque.nomMarque | lower}}/{{ monTroc.objettroc.objet.image }}.png">
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+{% endblock %}
+
+
