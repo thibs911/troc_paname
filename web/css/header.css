@@ -13,6 +13,10 @@ div.col-xs-6{
     color:white;
 }
 
+div.row img{
+    height: 100px;
+    width: 70px;
+}
 #menu {
     top:30px;
     margin:0 auto;

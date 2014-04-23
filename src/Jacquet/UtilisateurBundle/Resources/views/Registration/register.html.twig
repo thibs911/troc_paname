@@ -3,3 +3,24 @@
 {% block fos_user_content %}
 {% include "JacquetUtilisateurBundle:Registration:register_content.html.twig" %}
 {% endblock fos_user_content %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="{{ asset("css/UI/jquery-ui-1.10.4.custom.min.css") }}"/>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+<script type="text/javascript" src="{{ asset('jquery/UI/jquery-ui-1.10.4.custom.min.js') }}"></script>
+
+<script>
+    $(function() {
+
+        $( "#fos_user_registration_form_birthdate" ).datepicker();
+    });
+
+</script>
+{% endblock javascripts %}
